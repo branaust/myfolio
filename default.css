@@ -24,15 +24,16 @@ h1, h2, h3, h4, h5, h6, strong{
     font-weight: 500;
 }
 
-p, li, span, label, input, textarea{
+p, li, span, label, input, textarea,a {
     color: var(--secondaryText);
     font-family: 'Roboto Mono', monospace;
+    list-style: none;
 }
 
 a{
     text-decoration: none;
     color: #17a2b8;
-    list-style: none;
+    
 }
 
 h1{font-size: 56px;}
@@ -232,22 +233,38 @@ h6{font-size: 16px;}
     top: -5px;
     left: -5px;
 }
-
 #corner-tr{
     top: -5px;
     right: -5px;
 }
-
 #corner-br{
     bottom: -5px;
     right: -5px;
 }
-
 #corner-bl{
     bottom: -5px;
     left: -5px;
 }
 
+.about-wrapper{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding-bottom: 50px;
+    padding-top: 50px;
+    gap: 100px;
+}
+
+#skills{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--previewShadow);
+}
+
+.social-links{
+    display: grid;
+    align-content: center;
+    text-align:center;
+}
 
 @media screen and (max-width: 1200px){
     .main-container{
