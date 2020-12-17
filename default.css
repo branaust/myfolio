@@ -10,12 +10,17 @@
     --themeDotBorder: #24292e;
 
     --previewBg: rgb(251, 249, 243, 0.8);
-    --previewShadow: #f0ead6
+    --previewShadow: #f0ead6;
+
+    --buttonColor: black;
 }
 
 html, body {
     padding: 0;
     margin: 0;
+}
+body *{
+    transition: 0.3s;
 }
 
 h1, h2, h3, h4, h5, h6, strong{
@@ -91,6 +96,10 @@ h6{font-size: 16px;}
     align-items: center;
     background-color: var(--mainColor);
     border-radius: 5px 5px 0 0;
+}
+
+#navigation a{
+    color: var(--mainText);
 }
 
 #navigation{
@@ -301,6 +310,41 @@ h6{font-size: 16px;}
 .post-intro{
     color:#4b5156;
     font-size: 16px;
+}
+
+#contact-form{
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid var(--borderColor);
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--mainColor);
+    margin-bottom: 50px;
+}
+
+#contact-form label{
+    line-height: 2.7em;
+}
+
+.input-field{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--secondaryColor);
+    border-radius: 5px;
+    border: 1px solid var(--borderColor);
+    font-size: 14px;
+}
+
+#submit-btn{
+    margin-top:10px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #ffffff;
+    background-color: var(--buttonColor);
+    border:none;
 }
 
 @media screen and (max-width: 1200px){
