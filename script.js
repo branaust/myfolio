@@ -1,12 +1,10 @@
-// const light = document.getElementsByClassName('light-mode')
-// const blue = document.getElementsByClassName('blue-mode')
-// const green = document.querySelector('green-mode')
-// const purple = document.querySelector('purple-mode')
+///////////////////////// CHANGE THEME
+///////////////////////////////////////
 
 let themeDots = document.getElementsByClassName('theme-dot')
 let style = document.getElementById('theme-style')
 let theme = localStorage.getItem('theme')
-let contact = document.getElementById('contact-btn')
+
 
 if (theme == null) {
     setTheme('light')
@@ -36,7 +34,43 @@ function setTheme(mode) {
     localStorage.setItem('theme', mode)
 }
 
+///////////////////////// SMOOTH SCROLL
+///////////////////////////////////////
+
+let contact = document.querySelector('.contact-btn')
+
 contact.addEventListener('click', function () {
-    window.scrollTo(0, 500);
-    scrolldelay = setTimeout(pageScroll, 10);
+    smoothScroll('.contact-form', 2000)
 })
+
+function smoothScroll(target, duration) {
+    var target = document.querySelector(target)
+    var targetPosition = target.getBoundingClientRect().top;
+    var startPosition = window.pageYOffset;
+    var distance = targetPosition - startPosition;
+    var startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) {
+            startTime = currentTime
+        }
+        var timeElapsed = currentTime - startTime
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run)
+        if (timeElapsed < duration) requestAnimationFrame(animation)
+    }
+
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b
+        t--
+        return -c / 2 * (t * (t - 2) - 1) + b
+    }
+
+    requestAnimationFrame(animation);
+}
+
+
+
+
+
