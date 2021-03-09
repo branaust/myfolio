@@ -31,6 +31,7 @@ function setTheme(mode) {
         style.href = './css/purple.css'
     }
 
+
     localStorage.setItem('theme', mode)
 }
 
